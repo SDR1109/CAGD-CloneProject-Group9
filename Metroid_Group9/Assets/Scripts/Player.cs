@@ -11,15 +11,21 @@ using UnityEngine.SceneManagement;
  */
 public class Player : MonoBehaviour
 {
-    [Header("Player Movement Variables")]
+    [Header("Movement Variables")]
     public float speed = 10;
-    public float jumpForce = 7;
+    public float jumpForce = 7f;
     //makes it so that you can check under the player for ground in OnGround() incase the model height is changed later on
     public float underPlayer = 1.2f;
 
+    private Rigidbody rb;
 
+    [Header("Health Variables")]
     public int healthPoints = 99;
     public Vector3 respawnPoint;
+    public int blinkCounter = 5;
+
+    [Header("Combat Variables")]
+    public GameObject bullets;
 
 
 
@@ -27,6 +33,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         respawnPoint = transform.position;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -59,9 +66,10 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        if (OnGround() && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
+        if (OnGround() && Input.GetKeyDown(KeyCode.W))
         {
-            transform.position += Vector3.up * jumpForce;
+            //transform.position += Vector3.up * jumpForce;
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 
@@ -94,6 +102,7 @@ public class Player : MonoBehaviour
         if (healthPoints > 0)
         {
             //The player should blink for the next 5 seconds and shouldn’t be able to get damaged again during that time. 
+            StartCoroutine(Blink());
         }
         else //hp is less than or equal to 0
         {
@@ -101,4 +110,44 @@ public class Player : MonoBehaviour
             print("GAME OVER =[");
         }
     }
+
+    /// <summary>
+    /// Makes the player blink when it takes damage
+    /// </summary>
+    private IEnumerator Blink()
+    {
+        for (int count = 0; count < blinkCounter; count++)
+        {
+            if (count % 2 == 0)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    /// <summary>
+    /// Player can shoot bullets to harm enemies
+    /// </summary>
+    private void Shoot()
+    {
+        /*
+         * This will allow the player to shoot a new bullet in the direction the player is facing, 
+         * while the player holds the fire button. 
+         * The player should not be able to fire faster than 2 bullets per second.
+         * SPACE = fire in the direction the player is facing. 
+         * OR LEFT ARROW fires left – RIGHT ARROW fires right.
+         */
+
+        //regular bullet deals 1HP of damage
+        //heavy bullet deals 3HP of damage
+    }
+
+
+
 }
