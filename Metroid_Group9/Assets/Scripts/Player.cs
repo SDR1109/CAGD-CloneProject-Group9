@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/06/25
- * Last Updated: 04/06/25
+ * Last Updated: 04/07/25
  * Description: Allows player movement control
  */
 public class Player : MonoBehaviour
@@ -52,12 +52,15 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.localScale = new Vector3(-1, 1, 1);
+
         }
 
         //to move right
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
