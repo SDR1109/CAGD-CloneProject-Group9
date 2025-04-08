@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
  * Name: Maya Andrade
  * Date: 04/06/25
  * Last Updated: 04/07/25
- * Description: Allows player movement control
+ * Description: Allows player movement and combat control
  */
 public class Player : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 7f;
     //makes it so that you can check under the player for ground in OnGround() incase the model height is changed later on
     public float underPlayer = 1.2f;
+    public bool isfacingLeft;
 
     private Rigidbody rb;
 
@@ -25,7 +27,8 @@ public class Player : MonoBehaviour
     public int blinkCounter = 5;
 
     [Header("Combat Variables")]
-    public GameObject bullets;
+    public GameObject regBullets;
+    public GameObject heavyBullets;
 
 
 
@@ -49,18 +52,19 @@ public class Player : MonoBehaviour
     private void Move()
     {
         //to move left
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
+        if (Input.GetKey(KeyCode.A)) 
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
             transform.localScale = new Vector3(-1, 1, 1);
-
+            isfacingLeft = true;
         }
 
         //to move right
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
             transform.localScale = new Vector3(1, 1, 1);
+            isfacingLeft = true;
         }
     }
 
@@ -146,6 +150,30 @@ public class Player : MonoBehaviour
          * SPACE = fire in the direction the player is facing. 
          * OR LEFT ARROW fires left – RIGHT ARROW fires right.
          */
+
+
+        //if using arrow keys
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+
+        }
+
+        //if using space bar
+        if (isfacingLeft)
+        {
+            //shoot the bullets to the left
+        }
+        else
+        {
+            //shoot the bullets to the right
+        }
+
+
+
 
         //regular bullet deals 1HP of damage
         //heavy bullet deals 3HP of damage
