@@ -9,6 +9,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public int Damage;
+    public Vector3 dirction;
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,16 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private bool OnGround()
+    {
+        bool onGround = false;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.2f))
+        {
+            onGround = true;
+        }
+        return onGround;
     }
 }
