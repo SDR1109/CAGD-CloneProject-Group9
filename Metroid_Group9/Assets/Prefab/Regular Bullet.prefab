@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a787375930970bf4aa5717b52e35e072, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5122003850794756611}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a787375930970bf4aa5717b52e35e072, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6604113579815931639}
   m_SourcePrefab: {fileID: 100100000, guid: a787375930970bf4aa5717b52e35e072, type: 3}
 --- !u!1 &1369037642887167757 stripped
 GameObject:
@@ -102,3 +105,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022462422, y: 0.022462422, z: 0.0679038}
   m_Center: {x: 0, y: 0, z: 0.009271821}
+--- !u!114 &-6604113579815931639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369037642887167757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fed18c977d98ba458a0660e42018a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regBullets: {fileID: 0}
+  heavyBullets: {fileID: 0}
+  bulletDamage: 1
+  bulletSpeed: 10
+  bulletDespawnTime: 7

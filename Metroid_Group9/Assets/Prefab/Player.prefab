@@ -350,7 +350,10 @@ MonoBehaviour:
   speed: 10
   jumpForce: 7
   underPlayer: 1.2
+  isfacingLeft: 0
   healthPoints: 99
   respawnPoint: {x: 0, y: 0, z: 0}
   blinkCounter: 5
-  bullets: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  regBullets: {fileID: 1369037642887167757, guid: f5e3f6bc492d7d7429c6789028a63e3f, type: 3}
+  heavyBullets: {fileID: 1139008525790064357, guid: be2e09081db7fe242b2db8f4fc8fdb8e, type: 3}
