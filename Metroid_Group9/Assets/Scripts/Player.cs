@@ -70,10 +70,10 @@ public class Player : MonoBehaviour
     private void Move()
     {
         //to move left
-        if (Input.GetKey(KeyCode.A)) 
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-            transform.localScale = new Vector3(-1, 1, 1); 
+            transform.localScale = new Vector3(-1, 1, 1);
             isfacingLeft = true;
         }
 
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
             transform.localScale = new Vector3(1, 1, 1);
-            isfacingLeft = true;
+            isfacingLeft = false;
         }
     }
 
@@ -138,47 +138,27 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Player can shoot bullets to harm enemies
+    /// Player can shoot bullets to harm enemies with spacebar button
     /// </summary>
     private void Shoot()
     {
-
-        /*
-         * This will allow the player to shoot a new bullet in the direction the player is facing, 
-         * while the player holds the fire button. 
-         * The player should not be able to fire faster than 2 bullets per second.
-         * SPACE = fire in the direction the player is facing. 
-         * OR LEFT ARROW fires left – RIGHT ARROW fires right.
-         */
-
         //if using space bar
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isfacingLeft == true)
+            print(isfacingLeft);
+            if (bulletUpgraded == false)
             {
-                if (bulletUpgraded == false)
-                {
-                    Instantiate(regularBullet, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    Instantiate(heavyBullet, transform.position, Quaternion.identity);
-                }
+                GameObject newBullet = Instantiate(regularBullet, transform.position, Quaternion.identity);
+                newBullet.GetComponent<BulletScript>().bulletLeft = isfacingLeft;
+                bulletsShot++;
             }
             else
             {
-                if (bulletUpgraded == false)
-                {
-                    Instantiate(regularBullet, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    Instantiate(heavyBullet, transform.position, Quaternion.identity);
-                }
+                GameObject newBullet = Instantiate(heavyBullet, transform.position, Quaternion.identity);
+                newBullet.GetComponent<BulletScript>().bulletLeft = isfacingLeft;
+                bulletsShot++;
             }
         }
-
-       
     }
 
     /// <summary>

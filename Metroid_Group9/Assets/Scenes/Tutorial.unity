@@ -338,6 +338,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7229818314976903574, guid: 06756554493ba5d409c799e59124ce0c, type: 3}
+      propertyPath: heavyBullet
+      value: 
+      objectReference: {fileID: 1139008525790064357, guid: be2e09081db7fe242b2db8f4fc8fdb8e, type: 3}
+    - target: {fileID: 7229818314976903574, guid: 06756554493ba5d409c799e59124ce0c, type: 3}
+      propertyPath: regularBullet
+      value: 
+      objectReference: {fileID: 1369037642887167757, guid: f5e3f6bc492d7d7429c6789028a63e3f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
