@@ -15,6 +15,8 @@ public class EnemyMovement : MonoBehaviour
     public int life;
     public bool MoveRight = false;
     public bool MoveLeft = false;
+    public GameObject wall;
+    public LayerMask nonPlayerMask;
 
 
     // Start is called before the first frame update
@@ -30,26 +32,31 @@ public class EnemyMovement : MonoBehaviour
         Vector3 Right = transform.position + new Vector3(1.5f, 0, 0);
         Vector3 Left = transform.position + new Vector3(-1.5f, 0, 0);
 
-        if (Physics.Raycast(Right, Vector3.right, out hit, 1.5f) && OnGround())
+        if (Physics.Raycast(Right, Vector3.right, out hit, 0.5f, nonPlayerMask) && OnGround() == true)
         {
-            {
+
+            
+            
+            
                 print("Raycast hit the right");
                 MoveRight = false;
                 MoveLeft = true;
-
-
-            }
+            
+                
             
 
+        }
                
 
-            }if (Physics.Raycast(Left, Vector3.left, out hit, 1.5f) && OnGround())
+            if (Physics.Raycast(Left, Vector3.left, out hit, 0.5f, nonPlayerMask) && OnGround() == true)
             {
-                {
-                    print("Raycast hit the left");
-                    MoveLeft = false;
-                    MoveRight = true;
-                }
+           
+                print("Raycast hit the left");
+                MoveLeft = false;
+                MoveRight = true;
+            
+           
+            
         } if (MoveRight)
                 {
                     MovingRight();
@@ -73,6 +80,10 @@ public class EnemyMovement : MonoBehaviour
        else if (Physics.Raycast(rightEdge, Vector3.down, out hit, 1.2f))
         {
             onGround = true;
+        }
+        else
+        {
+            onGround = false;
         }
         return onGround;
     }
