@@ -7,7 +7,7 @@ using UnityEngine;
 /*
  * Name: Maya Andrade
  * Date: 04/08/25
- * Last Updated: 04/08/25
+ * Last Updated: 04/10/25
  * Description: Allows player's bullets to damage enemies and despawn
  */
 
@@ -18,7 +18,7 @@ public class BulletScript : MonoBehaviour
     //regular bullet deals 1HP of damage
     //heavy bullet deals 3HP of damage
 
-    public int bulletSpeed = 10;
+    public int bulletSpeed = 20;
     public int bulletDespawnTime = 7;
 
     // Start is called before the first frame update
