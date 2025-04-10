@@ -20,7 +20,6 @@ public class BulletScript : MonoBehaviour
 
     public int bulletSpeed = 10;
     public int bulletDespawnTime = 7;
-    public bool bulletLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +30,7 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
-        if (bulletLeft)
-        {
-            transform.position += Vector3.left * bulletSpeed * Time.deltaTime;
-        }
-        else
-        {
-            transform.position += Vector3.right * bulletSpeed * Time.deltaTime;
-        }
+        transform.position += transform.forward * bulletSpeed * Time.deltaTime;
     }
 
     /// <summary>

@@ -9,11 +9,16 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/06/25
- * Last Updated: 04/08/25
+ * Last Updated: 04/10/25
  * Description: Allows player movement
  */
 public class Player : MonoBehaviour
 {
+    /*
+     * To Fix:
+     * Isn't always counting the bullets shot so you can spam more than 2 per second
+     * Need a way for the bullet upgrade to actually trigger (probably gonna do it on the powerup script)
+     */
     [Header("Movement Variables")]
     public float speed = 10;
     public float jumpForce = 7f;
@@ -48,10 +53,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Jump();
-        Shoot();
-
         if (healthPoints <= 0) //checks to see if player has "died" yet or not
         {
             SceneManager.LoadScene(3);
@@ -62,6 +63,10 @@ public class Player : MonoBehaviour
             canShoot = false;
             StartCoroutine(BulletCooldown());
         }
+
+        Move();
+        Jump();
+        Shoot();
     }
 
     /// <summary>
@@ -143,20 +148,19 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
         //if using space bar
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canShoot == true)
         {
-            print(isfacingLeft);
             if (bulletUpgraded == false)
             {
-                GameObject newBullet = Instantiate(regularBullet, transform.position, Quaternion.identity);
-                newBullet.GetComponent<BulletScript>().bulletLeft = isfacingLeft;
                 bulletsShot++;
+                GameObject newBullet = Instantiate(regularBullet, transform.position, Quaternion.identity);
+                newBullet.transform.forward = isfacingLeft ? Vector3.left : Vector3.right;
             }
             else
             {
-                GameObject newBullet = Instantiate(heavyBullet, transform.position, Quaternion.identity);
-                newBullet.GetComponent<BulletScript>().bulletLeft = isfacingLeft;
                 bulletsShot++;
+                GameObject newBullet = Instantiate(heavyBullet, transform.position, Quaternion.identity);
+                newBullet.transform.forward = isfacingLeft ? Vector3.left : Vector3.right;
             }
         }
     }
