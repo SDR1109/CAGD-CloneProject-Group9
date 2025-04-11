@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public int life;
     public bool MoveRight = false;
     public bool MoveLeft = false;
-    public GameObject wall;
+    
     public LayerMask nonPlayerMask;
 
 
@@ -65,6 +65,11 @@ public class EnemyMovement : MonoBehaviour
                 {
                     MovingLeft();
                 }
+       
+
+
+
+
     }
     
     private bool OnGround()
@@ -98,4 +103,6 @@ public class EnemyMovement : MonoBehaviour
         transform.position += Vector3.left * speed * Time.deltaTime;
 
     }
+
+    
 }
