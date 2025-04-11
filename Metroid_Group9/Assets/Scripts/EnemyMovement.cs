@@ -65,10 +65,10 @@ public class EnemyMovement : MonoBehaviour
                 {
                     MovingLeft();
                 }
-       
 
 
 
+        DestroyObject();
 
     }
     
@@ -104,5 +104,23 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        print(other);
+        if (other.GetComponent<BulletScript>())
+        { 
+            print("bullet impacted");
+            life -= other.GetComponent<BulletScript>().bulletDamage;
+        }
+           
+        
+    }
+
+    private void DestroyObject()
+    {
+        if(life <=0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
