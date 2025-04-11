@@ -58,11 +58,6 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(3);
             print("GAME OVER =[");
         }
-        if (bulletsShot >= magazineSize)  //checks to see if the player needs a cooldown time from shooting bullets
-        {
-            canShoot = false;
-            StartCoroutine(BulletCooldown());
-        }
 
         Move();
         Jump();
@@ -155,12 +150,22 @@ public class Player : MonoBehaviour
                 bulletsShot++;
                 GameObject newBullet = Instantiate(regularBullet, transform.position, Quaternion.identity);
                 newBullet.transform.forward = isfacingLeft ? Vector3.left : Vector3.right;
+                if (bulletsShot >= magazineSize)  //checks to see if the player needs a cooldown time from shooting bullets
+                {
+                    canShoot = false;
+                    StartCoroutine(BulletCooldown());
+                }
             }
             else
             {
                 bulletsShot++;
                 GameObject newBullet = Instantiate(heavyBullet, transform.position, Quaternion.identity);
                 newBullet.transform.forward = isfacingLeft ? Vector3.left : Vector3.right;
+                if (bulletsShot >= magazineSize)  //checks to see if the player needs a cooldown time from shooting bullets
+                {
+                    canShoot = false;
+                    StartCoroutine(BulletCooldown());
+                }
             }
         }
     }
