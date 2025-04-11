@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public int healthPoints = 99;
     public Vector3 respawnPoint;
     public int blinkCounter = 5;
+    private bool canTakeDamage = true;
 
     [Header("Combat Variables")]
     public GameObject regularBullet;
@@ -117,6 +118,17 @@ public class Player : MonoBehaviour
         return onGround;
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyMovement>() && canTakeDamage == true)
+        {
+            healthPoints -= collision.gameObject.GetComponent<EnemyMovement>().Damage;
+            canTakeDamage = false;
+            StartCoroutine(Blink());
+        }
+    }
+
     /// <summary>
     /// Makes the player blink when it takes damage
     /// </summary>
@@ -132,9 +144,10 @@ public class Player : MonoBehaviour
             {
                 GetComponent<MeshRenderer>().enabled = true;
             }
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.25f);
         }
         GetComponent<MeshRenderer>().enabled = true;
+        canTakeDamage = true;
     }
 
     /// <summary>
