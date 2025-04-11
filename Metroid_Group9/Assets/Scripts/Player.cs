@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
 
     [Header("Health Variables")]
-    public int healthPoints = 99;
+    public int maxHP = 99;
+    public int healthPoints;
     public Vector3 respawnPoint;
     public int blinkCounter = 5;
     private bool canTakeDamage = true;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthPoints = maxHP;
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody>();
     }
