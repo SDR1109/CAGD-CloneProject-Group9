@@ -111,6 +111,7 @@ public class EnemyMovement : MonoBehaviour
         { 
             print("bullet impacted");
             life -= other.GetComponent<BulletScript>().bulletDamage;
+            Destroy(other.gameObject);
         }
            
         
