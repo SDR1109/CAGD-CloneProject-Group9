@@ -44,7 +44,11 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.GetComponent<Player>())
+        if (other.GetComponent<Player>())
+        {
+
+        }
+        else
         {
             if (other.TryGetComponent(out EnemyMovement enemy))
             {
