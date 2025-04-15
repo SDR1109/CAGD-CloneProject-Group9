@@ -41,4 +41,16 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(bulletDespawnTime);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.GetComponent<Player>())
+        {
+            if (other.TryGetComponent(out EnemyMovement enemy))
+            {
+                enemy.DamageEnemy(bulletDamage);
+            }
+            Destroy(gameObject);
+        }
+    }
 }
