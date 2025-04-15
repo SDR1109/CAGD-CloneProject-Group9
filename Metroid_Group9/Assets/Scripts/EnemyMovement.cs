@@ -104,15 +104,21 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    public void DamageEnemy(int amount)
+    {
+        print(gameObject.name + " was damaged " + amount + " hp!");
+        life -= amount;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        print(other);
-        if (other.GetComponent<BulletScript>())
-        { 
-            print("bullet impacted");
-            life -= other.GetComponent<BulletScript>().bulletDamage;
-            Destroy(other.gameObject);
-        }
+        //print(other);
+        //if (other.GetComponent<BulletScript>())
+        //{ 
+        //    print("bullet impacted");
+        //    life -= other.GetComponent<BulletScript>().bulletDamage;
+        //    Destroy(other.gameObject);
+        //}
            
         
     }
@@ -124,4 +130,5 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
