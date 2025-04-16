@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     [Header("Combat Variables")]
     public GameObject regularBullet;
     public GameObject heavyBullet;
-    private bool bulletUpgraded = false;
+    public bool bulletUpgraded = false;
     public bool canShoot = true;
     public int magazineSize = 2;
     public int bulletsShot = 0;
