@@ -15,4 +15,12 @@ public class JumpPowerup : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Player>())
+        {
+            other.GetComponent<Player>().jumpForce = other.GetComponent<Player>().jumpForce * 2;
+            Destroy(gameObject);
+        }
+    }
 }
