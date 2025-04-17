@@ -1,3 +1,7 @@
+/*Author [Samuel Diaz ]
+ * Last Updated [04/04/2025]
+ * Description [This code is in charge of changing the kind of bullets]
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
