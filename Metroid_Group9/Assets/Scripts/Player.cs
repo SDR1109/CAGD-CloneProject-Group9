@@ -9,23 +9,18 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/06/25
- * Last Updated: 04/10/25
+ * Last Updated: 04/17/25
  * Description: Allows player movement
  */
 public class Player : MonoBehaviour
 {
-    /*
-     * To Fix:
-     * Isn't always counting the bullets shot so you can spam more than 2 per second
-     * Need a way for the bullet upgrade to actually trigger (probably gonna do it on the powerup script)
-     */
+
     [Header("Movement Variables")]
     public float speed = 10;
     public float jumpForce = 7f;
     //makes it so that you can check under the player for ground in OnGround() incase the model height is changed later on
     public float underPlayer = 1.2f;
     private bool isfacingLeft;
-
     private Rigidbody rb;
 
     [Header("Health Variables")]
@@ -56,12 +51,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (healthPoints <= 0) //checks to see if player has "died" yet or not
         {
             SceneManager.LoadScene(3);
             print("GAME OVER =[");
         }
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            healthPoints -= 10;
+        }
         Move();
         Jump();
         Shoot();

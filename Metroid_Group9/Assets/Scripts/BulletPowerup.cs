@@ -17,8 +17,9 @@ public class BulletPowerup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, .5f, 0);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())
