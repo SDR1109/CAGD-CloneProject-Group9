@@ -4,15 +4,13 @@ using UnityEngine;
 
 /*
  * Name: Maya Andrade
- * Date: 04/10/25
+ * Date: 04/17/25
  * Last Updated: 04/17/25
- * Description: Allows health pack powerup to heal player to their max HP
+ * Description: Increases player's maxHP by 100 and puts them at full hp
  */
 
-public class HealthPack : MonoBehaviour
+public class IncMaxHP : MonoBehaviour
 {
-    public int givenHP = 30;
-
     // Update is called once per frame
     private void Update()
     {
@@ -24,11 +22,8 @@ public class HealthPack : MonoBehaviour
     {
         if (other.GetComponent<Player>())
         {
-            //heals player
-            int newHealth = givenHP + other.GetComponent<Player>().healthPoints; 
-            other.GetComponent<Player>().healthPoints = Mathf.Clamp(newHealth, 0, other.GetComponent<Player>().maxHP);
-
-            //destorys object
+            other.GetComponent<Player>().maxHP += 100;
+            other.GetComponent<Player>().healthPoints = other.GetComponent<Player>().maxHP;
             Destroy(gameObject);
         }
     }
