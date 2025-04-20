@@ -31,4 +31,14 @@ public class BreakableWall : MonoBehaviour
             }
         }
     }
+    public void BreakWall()
+    {
+        if (GetComponent<Player>().bulletUpgraded = true && GetComponent<Player>().jumpForce == 14 && GetComponent<Player>().
+            hammerEquipped == true)
+        {
+            Destroy(gameObject);
+
+        }
+    }
 }
+
