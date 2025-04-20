@@ -17,9 +17,10 @@ public class HammerScript : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * HammerSpeed * Time.deltaTime;
+        
         if (!PauseMenuScript.gameIsPaused)
         {
-            transform.Rotate(0, .5f, 0); //makes health pack rotate for aesthetic purposes
+            transform.Rotate(0, .5f, 0); 
         }
     }
     IEnumerator DespawnTime()
