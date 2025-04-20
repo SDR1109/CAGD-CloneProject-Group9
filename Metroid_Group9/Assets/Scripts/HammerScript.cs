@@ -13,6 +13,9 @@ public class HammerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!PauseMenuScript.gameIsPaused)
+        {
+            transform.Rotate(0, .5f, 0); //makes health pack rotate for aesthetic purposes
+        }
     }
 }

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/06/25
- * Last Updated: 04/17/25
+ * Last Updated: 04/19/25
  * Description: Allows player movement
  */
 public class Player : MonoBehaviour
@@ -48,26 +48,37 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        if (!PauseMenuScript.gameIsPaused)
+        {
+            Move();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!PauseMenuScript.gameIsPaused)
+        {
 
-        if (healthPoints <= 0) //checks to see if player has "died" yet or not
-        {
-            SceneManager.LoadScene(3);
-            print("GAME OVER =[");
+            if (healthPoints <= 0) //checks to see if player has "died" yet or not
+            {
+                SceneManager.LoadScene(3);
+                print("GAME OVER =[");
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                healthPoints -= 10;
+            }
+
+            Jump();
+            Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            healthPoints -= 10;
-        }
-        Move();
-        Jump();
-        Shoot();
     }
 
     /// <summary>
-    /// Allows the player to move left and right using the WASD and arrow key input
+    /// Allows the player to move left and right using the WASD keys
     /// </summary>
     private void Move()
     {
@@ -89,7 +100,7 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Allows the player to jump using WASD and arrow key input
+    /// Allows the player to jump using WASD inputs
     /// </summary>
     private void Jump()
     {
@@ -194,7 +205,4 @@ public class Player : MonoBehaviour
         canShoot = true;
         bulletsShot = 0;
     }
-
-
-
 }

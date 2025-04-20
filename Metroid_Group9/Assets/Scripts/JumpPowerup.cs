@@ -17,7 +17,10 @@ public class JumpPowerup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, .5f, 0);
+        if (!PauseMenuScript.gameIsPaused)
+        {
+            transform.Rotate(0, .5f, 0); //makes health pack rotate for aesthetic purposes
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

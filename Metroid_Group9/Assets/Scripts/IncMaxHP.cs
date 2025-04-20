@@ -14,7 +14,10 @@ public class IncMaxHP : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        transform.Rotate(0, .5f, 0); //makes health pack rotate for aesthetic purposes
+        if (!PauseMenuScript.gameIsPaused)
+        {
+            transform.Rotate(0, .5f, 0); //makes health pack rotate for aesthetic purposes
+        }
     }
 
     //Heals the player back to max health
