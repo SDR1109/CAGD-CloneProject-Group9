@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class BreakableWall : MonoBehaviour
 {
+    public GameObject hammer;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,13 @@ public class BreakableWall : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-
-        if(GetComponent<Player>().bulletUpgraded =true && GetComponent<Player>().jumpForce == 14)
+       if(collision.gameObject.GetComponent<HammerScript>())
         {
-            
+            if (GetComponent<Player>().bulletUpgraded = true && GetComponent<Player>().jumpForce == 14 && GetComponent<Player>()
+                .hammerEquipped == true)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
