@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
 
             Jump();
             Shoot();
+            HammerThrow();
         }
     }
 
@@ -196,11 +197,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Hammer()
+    /// <summary>
+    /// Allows the player to throw hammers to break down the special wall
+    /// </summary>
+    private void HammerThrow()
     {
         if (Input.GetKeyDown(KeyCode.H) && hammerEquipped == true)
         {
-            
+            GameObject newHammer = Instantiate(hammer, transform.position, Quaternion.identity);
+            newHammer.transform.forward = isfacingLeft ? Vector3.left : Vector3.right;
         }
     }
 
