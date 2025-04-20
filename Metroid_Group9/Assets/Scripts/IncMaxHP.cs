@@ -20,7 +20,7 @@ public class IncMaxHP : MonoBehaviour
         }
     }
 
-    //Heals the player back to max health
+    //increases the player's max HP and heals them back to that new max
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())

@@ -13,7 +13,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     public static bool gameIsPaused = false;
-
     public GameObject pauseMenuUI;
 
     private void Start()
@@ -74,5 +73,4 @@ public class PauseMenuScript : MonoBehaviour
         print("Quit Game");
         Application.Quit();
     }
-
 }

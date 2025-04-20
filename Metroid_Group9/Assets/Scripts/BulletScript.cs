@@ -42,6 +42,10 @@ public class BulletScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /*
+     * if it collides with the player, nothing happens
+     * ifit collides with an enemy, it damages the enemy by whatever amount of damage that bullet does
+     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())

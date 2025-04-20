@@ -28,6 +28,7 @@ public class HealthBar : MonoBehaviour
     {
         SetHP();
     }
+
     /// <summary>
     /// Sets the maximum value of the health bar and makes it green (to show full health)
     /// </summary>

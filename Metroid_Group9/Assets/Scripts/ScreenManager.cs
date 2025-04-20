@@ -28,6 +28,7 @@ public class ScreenManager : MonoBehaviour
     /// </summary>
     public void MainMenuButtonPressed()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
@@ -36,6 +37,7 @@ public class ScreenManager : MonoBehaviour
     /// </summary>
     public void TutorialButtonPressed()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
@@ -44,6 +46,7 @@ public class ScreenManager : MonoBehaviour
     /// </summary>
     public void PlayGameButtonPressed()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(2);
     }
 

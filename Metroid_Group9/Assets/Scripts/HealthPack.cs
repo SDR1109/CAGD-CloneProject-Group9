@@ -22,7 +22,7 @@ public class HealthPack : MonoBehaviour
         }
     }
 
-    //Heals the player back to max health
+    //Heals the player x amount of health
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())

@@ -14,7 +14,6 @@ using UnityEngine.SceneManagement;
  */
 public class Player : MonoBehaviour
 {
-
     [Header("Movement Variables")]
     public float speed = 10;
     public float jumpForce = 7f;
@@ -130,7 +129,7 @@ public class Player : MonoBehaviour
         return onGround;
     }
 
-
+    //if the player collides with an enemy and isn't blinking, it starts blinking and can't take damage while blinking
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<EnemyMovement>() && canTakeDamage == true)
