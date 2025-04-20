@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/06/25
- * Last Updated: 04/19/25
+ * Last Updated: 04/20/25
  * Description: Allows player movement
  */
 public class Player : MonoBehaviour
@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     [Header("Combat Variables")]
     public GameObject regularBullet;
     public GameObject heavyBullet;
+    public GameObject hammer;
+    public bool hammerEquipped = false;
     public bool bulletUpgraded = false;
     public bool canShoot = true;
     public int magazineSize = 2;
@@ -191,6 +193,14 @@ public class Player : MonoBehaviour
                     StartCoroutine(BulletCooldown());
                 }
             }
+        }
+    }
+
+    private void Hammer()
+    {
+        if (Input.GetKeyDown(KeyCode.H) && hammerEquipped == true)
+        {
+            
         }
     }
 
