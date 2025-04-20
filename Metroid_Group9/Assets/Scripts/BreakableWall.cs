@@ -21,9 +21,10 @@ public class BreakableWall : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+
         if(GetComponent<Player>().bulletUpgraded =true && GetComponent<Player>().jumpForce == 14)
         {
-
+            
         }
     }
 }
