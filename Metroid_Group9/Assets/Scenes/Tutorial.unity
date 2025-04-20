@@ -3832,6 +3832,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5394552325973572173, guid: 2c6c6774e0fa8fc42ade73734394f0bd, type: 3}
+      propertyPath: hammer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9174634634600073037, guid: 2c6c6774e0fa8fc42ade73734394f0bd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
