@@ -37,10 +37,11 @@ public class HammerScript : MonoBehaviour
         else
         {
             if (other.GetComponent<BreakableWall>())
-                {
+            {
                 GetComponent<BreakableWall>().BreakWall();
+
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }
