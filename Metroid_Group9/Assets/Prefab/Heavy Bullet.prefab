@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5184220144409206002}
   - component: {fileID: 1303436255037320128}
   - component: {fileID: 8402307143723130012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing(3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4240944063723411854}
   - component: {fileID: 6049230971250179158}
   - component: {fileID: 2351792207446500498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 325739754520573023}
   - component: {fileID: -7974900328812050622}
   - component: {fileID: 7918221390426710650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heavy Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 5550842272667767630}
   - component: {fileID: 4978208287588411945}
   - component: {fileID: 8944352086487564594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 7365412860169248497}
   - component: {fileID: 1264903053584961115}
   - component: {fileID: 4809991400560431105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 5880454595735851222}
   - component: {fileID: 5405101549073930842}
   - component: {fileID: 403169122512669529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4544859984717648041}
   - component: {fileID: 6426699531886743223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

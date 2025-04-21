@@ -7,7 +7,7 @@ using UnityEngine;
 /*
  * Name: Maya Andrade
  * Date: 04/08/25
- * Last Updated: 04/10/25
+ * Last Updated: 04/20/25
  * Description: Allows player's bullets to damage enemies and despawn
  */
 
@@ -48,9 +48,13 @@ public class BulletScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.tag == "Projectile")
         {
-
+            //makes sure that if the bullets overlap with themselves or any part of their models they dont cause each other to delete accidentally
+        }
+        if (other.tag == "Player")
+        {
+            //makes sure that if the bullets overlap with any part of the player it doesn't delete the bullet accidentally
         }
         else
         {

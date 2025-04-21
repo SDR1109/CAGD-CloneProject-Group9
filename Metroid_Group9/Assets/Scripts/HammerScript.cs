@@ -30,7 +30,7 @@ public class HammerScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.tag == "Player")
         {
 
         }
@@ -40,6 +40,7 @@ public class HammerScript : MonoBehaviour
                 {
                 GetComponent<BreakableWall>().BreakWall();
             }
+            Destroy(gameObject);
         }
     }
 }

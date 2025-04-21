@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Name: Maya Andrade
  * Date: 04/19/25
- * Last Updated: 04/19/25
+ * Last Updated: 04/20/25
  * Description: Gives the game a pause menu
  */
 
@@ -24,8 +24,6 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(gameIsPaused);
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6883193602332246961}
   - component: {fileID: 8701160757685534889}
   - component: {fileID: 8358111709205181781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a787375930970bf4aa5717b52e35e072, type: 3}
       propertyPath: m_Name
       value: Regular Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a787375930970bf4aa5717b52e35e072, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5754084199372789682, guid: a787375930970bf4aa5717b52e35e072, type: 3}
