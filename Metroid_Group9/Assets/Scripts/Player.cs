@@ -68,10 +68,6 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene(3);
                 print("GAME OVER =[");
             }
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                healthPoints -= 10;
-            }
 
             Jump();
             Shoot();

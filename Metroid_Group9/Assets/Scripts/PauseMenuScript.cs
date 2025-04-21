@@ -18,11 +18,14 @@ public class PauseMenuScript : MonoBehaviour
     private void Start()
     {
         pauseMenuUI.SetActive(false);
+        gameIsPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(gameIsPaused);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)

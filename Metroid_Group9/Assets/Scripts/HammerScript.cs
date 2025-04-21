@@ -1,4 +1,5 @@
-/*Author [Samuel Diaz ]
+/*
+ * Author [Samuel Diaz ]
  * Last Updated [04/04/2025]
  * Description [This code is in charge of the hammer movement]
  */
@@ -21,11 +22,6 @@ public class HammerScript : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * hammerSpeed * Time.deltaTime;
-        
-        if (!PauseMenuScript.gameIsPaused)
-        {
-            transform.Rotate(0, 0, .5f); 
-        }
     }
     IEnumerator DespawnTime()
     {
