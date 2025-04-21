@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HammerScript : MonoBehaviour
 {
-    public int HammerSpeed = 20;
-    public int HammerDespawnTime = 7;
+    public int hammerSpeed = 20;
+    public int hammerDespawnTime = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +16,16 @@ public class HammerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * HammerSpeed * Time.deltaTime;
+        transform.position += transform.forward * hammerSpeed * Time.deltaTime;
         
         if (!PauseMenuScript.gameIsPaused)
         {
-            transform.Rotate(0, .5f, 0); 
+            transform.Rotate(0, 0, .5f); 
         }
     }
     IEnumerator DespawnTime()
     {
-        yield return new WaitForSeconds(HammerDespawnTime);
+        yield return new WaitForSeconds(hammerDespawnTime);
         Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
