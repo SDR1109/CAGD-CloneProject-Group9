@@ -28,15 +28,17 @@ public class HammerScript : MonoBehaviour
         yield return new WaitForSeconds(hammerDespawnTime);
         Destroy(gameObject);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+      
+        if (other.gameObject.tag == "Player")
         {
 
         }
         else
         {
-            if (other.GetComponent<BreakableWall>())
+            if (other.gameObject.GetComponent<BreakableWall>())
             {
                 GetComponent<BreakableWall>().BreakWall();
 
@@ -45,3 +47,4 @@ public class HammerScript : MonoBehaviour
         }
     }
 }
+

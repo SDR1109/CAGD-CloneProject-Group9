@@ -334,7 +334,7 @@ MonoBehaviour:
   blinkCounter: 5
   regularBullet: {fileID: 1369037642887167757, guid: f5e3f6bc492d7d7429c6789028a63e3f, type: 3}
   heavyBullet: {fileID: 1139008525790064357, guid: be2e09081db7fe242b2db8f4fc8fdb8e, type: 3}
-  hammer: {fileID: 0}
+  hammer: {fileID: 7709399439880479486, guid: 54420543850fd814693a3f3cdfabbf76, type: 3}
   hammerEquipped: 0
   bulletUpgraded: 0
   canShoot: 1
