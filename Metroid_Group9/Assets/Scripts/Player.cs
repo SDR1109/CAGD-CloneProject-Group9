@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public bool canShoot = true;
     public int magazineSize = 2;
     public int bulletsShot = 0;
+    public int EnemyCount = 7;
 
 
 
@@ -73,6 +74,8 @@ public class Player : MonoBehaviour
             Shoot();
             HammerThrow();
         }
+
+        WinGame();
     }
 
     /// <summary>
@@ -214,5 +217,13 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1);
         canShoot = true;
         bulletsShot = 0;
+    }
+
+    private void WinGame()
+    {
+        if (EnemyCount == 0)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 }

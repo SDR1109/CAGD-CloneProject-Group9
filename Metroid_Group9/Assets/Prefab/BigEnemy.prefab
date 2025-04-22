@@ -151,7 +151,7 @@ MonoBehaviour:
   life: 10
   MoveRight: 0
   MoveLeft: 0
-  EnemyCount: 7
+  player: {fileID: 3121524043670541025, guid: 06756554493ba5d409c799e59124ce0c, type: 3}
   nonPlayerMask:
     serializedVersion: 2
     m_Bits: 55

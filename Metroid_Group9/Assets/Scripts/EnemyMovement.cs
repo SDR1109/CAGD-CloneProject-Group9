@@ -16,7 +16,8 @@ public class EnemyMovement : MonoBehaviour
     public int life;
     public bool MoveRight = false;
     public bool MoveLeft = false;
-    public int EnemyCount = 7;
+    
+    
     
     public LayerMask nonPlayerMask;
 
@@ -30,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WinGame();
+       
         RaycastHit hit;
         Vector3 Right = transform.position + new Vector3(1.5f, 0, 0);
         Vector3 Left = transform.position + new Vector3(-1.5f, 0, 0);
@@ -71,7 +72,7 @@ public class EnemyMovement : MonoBehaviour
 
 
 
-        DestroyObject();
+       
 
     }
     
@@ -111,7 +112,18 @@ public class EnemyMovement : MonoBehaviour
     {
         
         life -= amount;
-        
+        if (life <= 0)
+        {
+            
+            Destroy(gameObject);
+            Player foundPlayer = GameObject.FindWithTag("Player").GetComponent<Player>();
+            if (foundPlayer != null)
+            {
+                foundPlayer.EnemyCount--;
+            }
+
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -127,19 +139,6 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
-    private void DestroyObject()
-    {
-        if(life <=0)
-        {
-            Destroy(gameObject);
-            EnemyCount--;
-        }
-    }
-    private void WinGame()
-    {
-        if (EnemyCount == 0)
-        {
-            SceneManager.LoadScene(4);
-        }
-    }
+   
+
 }
