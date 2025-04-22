@@ -471,6 +471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8014008155507087230, guid: 28e1e95c1902a6c449a0eb0bc2cb5f6a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
