@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
             
             
             
-                print("Raycast hit the right");
+                
                 MoveRight = false;
                 MoveLeft = true;
             
@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
             if (Physics.Raycast(Left, Vector3.left, out hit, 0.5f, nonPlayerMask) && OnGround() == true)
             {
            
-                print("Raycast hit the left");
+                
                 MoveLeft = false;
                 MoveRight = true;
             
@@ -109,7 +109,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void DamageEnemy(int amount)
     {
-        print(gameObject.name + " was damaged " + amount + " hp!");
+        
         life -= amount;
         
     }
