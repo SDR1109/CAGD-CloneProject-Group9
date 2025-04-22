@@ -31,6 +31,7 @@ public class HammerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print(other.gameObject);
       
         if (other.gameObject.tag == "Player")
         {
@@ -38,9 +39,13 @@ public class HammerScript : MonoBehaviour
         }
         else
         {
+            print(other.gameObject + "Test 1");
+
             if (other.gameObject.GetComponent<BreakableWall>())
             {
-                GetComponent<BreakableWall>().BreakWall();
+                print(other.gameObject + "Test 2");
+
+                other.transform.GetComponent<BreakableWall>().BreakWall();
 
                 Destroy(gameObject);
             }

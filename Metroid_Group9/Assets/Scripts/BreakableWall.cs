@@ -8,18 +8,8 @@ using UnityEngine;
 
 public class BreakableWall : MonoBehaviour
 {
-    public GameObject hammer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /*public GameObject hammer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision collision)
     {
        if(collision.gameObject.GetComponent<HammerScript>())
@@ -31,13 +21,20 @@ public class BreakableWall : MonoBehaviour
             }
         }
     }
+    */
     public void BreakWall()
     {
-        if (GetComponent<Player>().bulletUpgraded = true && GetComponent<Player>().jumpForce == 14 && GetComponent<Player>().
-            hammerEquipped == true)
-        {
-            Destroy(gameObject);
+        // First we look for a GameObject in the current scene that has the "Player" tag.
+        Player foundPlayer = GameObject.FindWithTag("Player").GetComponent<Player>();
 
+        // If we *DID* find a player
+        if (foundPlayer != null)
+        {
+            // Go through the regular conditions with the found player
+            if (foundPlayer.bulletUpgraded && foundPlayer.jumpForce == 14 && foundPlayer.hammerEquipped)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
